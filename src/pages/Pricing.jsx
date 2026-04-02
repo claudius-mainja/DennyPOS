@@ -49,7 +49,7 @@ export default function Pricing() {
     },
     {
       q: 'Is there a free trial?',
-      a: 'We offer free demonstrations to show you how DennyPOS works. Contact us to schedule your personalized demo.',
+      a: 'Yes! We offer a free 30-day demo period so you can test DennyPOS thoroughly in your business before committing. Contact us to start your trial.',
     },
     {
       q: 'What payment methods do you accept?',

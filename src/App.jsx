@@ -11,6 +11,9 @@ import Services from './pages/Services'
 import About from './pages/About'
 import FAQ from './pages/FAQ'
 import Contact from './pages/Contact'
+import Returns from './pages/Returns'
+import Terms from './pages/Terms'
+import Privacy from './pages/Privacy'
 import PageTransition from './components/common/PageTransition'
 
 function App() {
@@ -34,6 +37,9 @@ function App() {
           <Route path="/about" element={<PageTransition><About /></PageTransition>} />
           <Route path="/faq" element={<PageTransition><FAQ /></PageTransition>} />
           <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+          <Route path="/returns" element={<PageTransition><Returns /></PageTransition>} />
+          <Route path="/terms" element={<PageTransition><Terms /></PageTransition>} />
+          <Route path="/privacy" element={<PageTransition><Privacy /></PageTransition>} />
         </Routes>
       </AnimatePresence>
       

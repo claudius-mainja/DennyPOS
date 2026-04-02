@@ -51,10 +51,9 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center gap-3 group">
               <div className="relative">
-                <img src={LogoImg} alt="DennyPOS Logo" className="w-10 h-10 transition-transform duration-300 group-hover:scale-110 object-contain" />
+                <img src={LogoImg} alt="DennyPOS Logo" className="h-12 w-auto transition-transform duration-300 group-hover:scale-105 object-contain" />
                 <div className="absolute inset-0 bg-green-500/20 blur-xl rounded-full group-hover:bg-green-500/40 transition-all duration-300" />
               </div>
-              <span className="text-xl font-bold gradient-text">DennyPOS</span>
             </Link>
 
             <div className="hidden lg:flex items-center gap-1">

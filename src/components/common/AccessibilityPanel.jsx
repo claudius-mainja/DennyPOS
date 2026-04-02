@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { X, Accessibility, Languages, Sun, Moon, Eye, Type, Contrast } from 'lucide-react'
 import { useAccessibility } from '../../context/AccessibilityContext'
 import { useLanguage } from '../../context/LanguageContext'

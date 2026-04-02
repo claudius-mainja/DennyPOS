@@ -45,7 +45,7 @@ const resources = {
       howItWorks: {
         title: 'How to Get DennyPOS',
         steps: {
-          step1: { title: 'Book a Demo', desc: 'Schedule a free personalized demo with our team' },
+          step1: { title: 'Book a Demo', desc: 'Start your free 30-day trial with personalized setup' },
           step2: { title: 'Consultation', desc: "We'll assess your business needs and recommend the best package" },
           step3: { title: 'Installation', desc: 'Our team installs and configures the system on-site' },
           step4: { title: 'Training', desc: 'Comprehensive training for you and your staff' },
@@ -180,7 +180,7 @@ const resources = {
           { q: 'What is DennyPOS?', a: 'DennyPOS is a locally-installed Point of Sale system designed for South African businesses. Unlike cloud-based solutions, your data stays on your premises, ensuring maximum security and reliability.' },
           { q: 'Do I need internet for DennyPOS to work?', a: 'No, DennyPOS is designed to work offline. While internet is required for some features like email receipts, your core POS operations continue uninterrupted even without connectivity.' },
           { q: 'What industries does DennyPOS support?', a: 'DennyPOS supports a wide range of industries including retail, restaurants, cafes, liquor stores, pharmacies, hardware stores, fashion, electronics, spas, and automotive businesses.' },
-          { q: 'Can I try DennyPOS before buying?', a: 'Yes! We offer free demonstrations for all interested businesses. Contact us to schedule your personalized demo.' },
+          { q: 'Can I try DennyPOS before buying?', a: 'Yes! We offer a free 30-day demo period for all interested businesses. This gives you ample time to test DennyPOS thoroughly in your actual business environment. Contact us to schedule your personalized demo and start your free trial.' },
           { q: 'How long does installation take?', a: 'Installation typically takes 1-2 days depending on your business size and complexity. Our team handles everything from setup to training.' },
           { q: 'What kind of support do you offer?', a: 'We offer comprehensive support including phone, email, and WhatsApp. Professional and Enterprise packages include priority and dedicated support.' },
           { q: 'Can DennyPOS integrate with my existing systems?', a: 'Yes, DennyPOS offers API access and integrations with popular accounting software, e-commerce platforms, and other business tools.' },

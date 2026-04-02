@@ -45,10 +45,9 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-6 group">
               <div className="relative">
-                <img src={LogoImg} alt="DennyPOS Logo" className="w-12 h-12 object-contain" />
+                <img src={LogoImg} alt="DennyPOS Logo" className="h-14 w-auto object-contain" />
                 <div className="absolute inset-0 bg-green-500/20 blur-xl rounded-full" />
               </div>
-              <span className="text-2xl font-bold gradient-text">DennyPOS</span>
             </Link>
             <p className="text-gray-400 mb-6 max-w-md">
               {t('footer.tagline')}
@@ -137,9 +136,22 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-white/5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-500 text-sm">
-              {t('footer.copyright')}
-            </p>
+            <div className="text-center md:text-left">
+              <p className="text-gray-500 text-sm mb-2">
+                © 2026 DennyPOS. All rights reserved.
+              </p>
+              <p className="text-gray-600 text-xs">
+                Designed and developed by{' '}
+                <a 
+                  href="https://www.blacklemur.co.za" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-green-500 hover:text-green-400 transition-colors"
+                >
+                  Blacklemur Innovations
+                </a>
+              </p>
+            </div>
             <div className="flex items-center gap-6">
               <a 
                 href="https://wa.me/27743551336" 
