@@ -4,7 +4,7 @@ import {
   MapPin, Phone, Mail, Check, ArrowRight, 
   Target, Heart, Shield, Lightbulb
 } from 'lucide-react'
-import { Logo } from '../assets/Logo'
+import LogoImg from '../assets/logo.jpg'
 
 export default function About() {
   const { t } = useTranslation()
@@ -82,7 +82,7 @@ export default function About() {
             >
               <div className="absolute -top-6 -right-6 w-24 h-24 bg-green-500/20 rounded-full blur-3xl" />
               <div className="relative z-10">
-                <Logo className="w-20 h-20 mb-6" />
+                <img src={LogoImg} alt="DennyPOS Logo" className="w-20 h-20 mb-6 object-contain" />
                 <h3 className="text-2xl font-bold text-white mb-4">DennyPOS</h3>
                 <p className="text-gray-400 mb-4">
                   Premium Point of Sale Solutions for South African Businesses

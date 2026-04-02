@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Menu, X, ChevronDown, ShoppingCart, Monitor, Phone } from 'lucide-react'
-import Logo from '../../assets/Logo'
+import LogoImg from '../../assets/logo.jpg'
 
 const WhatsAppIcon = () => (
   <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
@@ -51,7 +51,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center gap-3 group">
               <div className="relative">
-                <Logo className="w-10 h-10 transition-transform duration-300 group-hover:scale-110" />
+                <img src={LogoImg} alt="DennyPOS Logo" className="w-10 h-10 transition-transform duration-300 group-hover:scale-110 object-contain" />
                 <div className="absolute inset-0 bg-green-500/20 blur-xl rounded-full group-hover:bg-green-500/40 transition-all duration-300" />
               </div>
               <span className="text-xl font-bold gradient-text">DennyPOS</span>

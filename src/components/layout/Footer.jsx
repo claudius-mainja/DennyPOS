@@ -5,7 +5,7 @@ import {
   Facebook, Twitter, Linkedin, Instagram,
   ArrowRight, ChevronRight, Send
 } from 'lucide-react'
-import { Logo } from '../../assets/Logo'
+import LogoImg from '../../assets/logo.jpg'
 
 const socialLinks = [
   { icon: Facebook, href: '#', label: 'Facebook' },
@@ -45,7 +45,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-6 group">
               <div className="relative">
-                <Logo className="w-12 h-12" />
+                <img src={LogoImg} alt="DennyPOS Logo" className="w-12 h-12 object-contain" />
                 <div className="absolute inset-0 bg-green-500/20 blur-xl rounded-full" />
               </div>
               <span className="text-2xl font-bold gradient-text">DennyPOS</span>
