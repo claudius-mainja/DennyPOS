@@ -17,29 +17,29 @@ export default function Pricing() {
     {
       key: 'starter',
       price: isAnnual ? 1499 : 1799,
-      savings: isAnnual ? 'ZAR 3,600/year' : null,
+      savings: isAnnual ? 'R3,600/year' : null,
       ...t('pricing.packages.starter', { returnObjects: true }),
     },
     {
       key: 'professional',
       price: isAnnual ? 2999 : 3599,
-      savings: isAnnual ? 'ZAR 7,200/year' : null,
+      savings: isAnnual ? 'R7,200/year' : null,
       popular: true,
       ...t('pricing.packages.professional', { returnObjects: true }),
     },
     {
       key: 'enterprise',
       price: isAnnual ? 5999 : 7199,
-      savings: isAnnual ? 'ZAR 14,400/year' : null,
+      savings: isAnnual ? 'R14,400/year' : null,
       ...t('pricing.packages.enterprise', { returnObjects: true }),
     },
   ]
 
   const addons = [
-    { name: 'Additional Terminal', price: 'ZAR 299/month', desc: 'Add more POS stations' },
-    { name: 'E-commerce Integration', price: 'ZAR 199/month', desc: 'Online store sync' },
-    { name: 'API Access', price: 'ZAR 149/month', desc: 'Custom integrations' },
-    { name: 'Priority Training', price: 'ZAR 999/once', desc: 'Extended training session' },
+    { name: 'Additional Terminal', price: 'R299/month', desc: 'Add more POS stations' },
+    { name: 'E-commerce Integration', price: 'R199/month', desc: 'Online store sync' },
+    { name: 'API Access', price: 'R149/month', desc: 'Custom integrations' },
+    { name: 'Priority Training', price: 'R999/once', desc: 'Extended training session' },
   ]
 
   const faqs = [
@@ -140,7 +140,7 @@ export default function Pricing() {
 
                   <div className="text-center mb-6">
                     <div className="flex items-baseline justify-center gap-1">
-                      <span className="text-4xl font-bold text-white">ZAR {pkg.price.toLocaleString()}</span>
+                      <span className="text-4xl font-bold text-white">R{pkg.price.toLocaleString()}</span>
                       <span className="text-gray-400">{t('pricing.monthly')}</span>
                     </div>
                     {pkg.savings && (

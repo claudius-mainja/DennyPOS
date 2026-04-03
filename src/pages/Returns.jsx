@@ -75,7 +75,7 @@ export default function Returns() {
                     {[
                       'The original license holder must request the transfer in writing',
                       'The new owner must agree to the terms of service',
-                      'A transfer fee of ZAR 500 applies',
+                      'A transfer fee of R500 applies',
                       'Transfers must be completed within 30 days of request'
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-3">

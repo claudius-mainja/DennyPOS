@@ -101,21 +101,21 @@ const resources = {
         packages: {
           starter: {
             name: 'Starter',
-            price: 'ZAR 1,499',
+            price: '1,499',
             period: '/month',
             desc: 'Perfect for single-location small businesses',
             features: ['Single Terminal', 'Basic Inventory', 'Standard Reports', 'Email Support', 'Cash Management']
           },
           professional: {
             name: 'Professional',
-            price: 'ZAR 2,999',
+            price: '2,999',
             period: '/month',
             desc: 'Ideal for growing businesses with multiple users',
             features: ['Up to 5 Terminals', 'Advanced Inventory', 'Full Reporting Suite', 'Priority Support', 'Multi-User Access', 'Customer Loyalty', 'Supplier Management', 'Barcode Scanning']
           },
           enterprise: {
             name: 'Enterprise',
-            price: 'ZAR 5,999',
+            price: '5,999',
             period: '/month',
             desc: 'Complete solution for large operations',
             features: ['Unlimited Terminals', 'Multi-Store Management', 'Custom Reports', '24/7 Dedicated Support', 'API Access', 'Custom Integrations', 'Advanced Security', 'On-Site Training', 'White-Label Options']
@@ -328,21 +328,21 @@ const resources = {
         packages: {
           starter: {
             name: 'Beginner',
-            price: 'ZAR 1,499',
+            price: '1,499',
             period: '/maand',
             desc: 'Perfek vir enkel-ligging klein besighede',
             features: ['Enkele Terminool', 'Basiese Voorraad', 'Standaard Verslae', 'E-pos Ondersteuning', 'Kontantbestuur']
           },
           professional: {
             name: 'Professioneel',
-            price: 'ZAR 2,999',
+            price: '2,999',
             period: '/maand',
             desc: 'Ideaal vir groeiende besighede met veelvuldige gebruikers',
             features: ['Tot 5 Terminale', 'Gevorderde Voorraad', 'Volledige Verslag Suite', 'Prioriteit Ondersteuning', 'Multi-gebruiker Toegang', 'Kliënttrou', 'Verskafferbestuur', 'Strookkode Skandering']
           },
           enterprise: {
             name: 'Onderneming',
-            price: 'ZAR 5,999',
+            price: '5,999',
             period: '/maand',
             desc: 'Volledige oplossing vir groot bedrywighede',
             features: ['Onbeperkte Terminale', 'Multi-winkel Bestuur', 'Pasgemaakte Verslae', '24/7 Toegewyde Ondersteuning', 'API Toegang', 'Pasgemaakte Integrasies', 'Gevorderde Sekuriteit', 'Plaaslike Opleiding', 'Wit-etiket Opsies']
@@ -555,21 +555,21 @@ const resources = {
         packages: {
           starter: {
             name: 'I-Starter',
-            price: 'ZAR 1,499',
+            price: '1,499',
             period: '/nyanga',
             desc: 'Kufanele amashonisa asemakhaya',
             features: ['I-Single Terminal', 'I-Basic Inventory', 'I-Standard Reports', 'I-Email Support', 'I-Cash Management']
           },
           professional: {
             name: 'I-Professional',
-            price: 'ZAR 2,999',
+            price: '2,999',
             period: '/nyanga',
             desc: 'Kufanele amabhizinisi akhulayo',
             features: ['Amaterminali ama-5', 'I-Advanced Inventory', 'I-Full Reporting Suite', 'I-Priority Support', 'I-Multi-User Access', 'I-Customer Loyalty', 'I-Supplier Management', 'I-Barcoding Scanning']
           },
           enterprise: {
             name: 'I-Enterprise',
-            price: 'ZAR 5,999',
+            price: '5,999',
             period: '/nyanga',
             desc: 'Isixazululo esiphelele sezinkambiso ezinkulu',
             features: ['Amaterminali angapheli', 'I-Multi-Store Management', 'I-Custom Reports', 'I-24/7 Dedicated Support', 'I-API Access', 'I-Custom Integrations', 'I-Advanced Security', 'I-On-Site Training', 'I-White-Label Options']
