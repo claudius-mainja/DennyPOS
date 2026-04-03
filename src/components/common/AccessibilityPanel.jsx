@@ -39,10 +39,13 @@ export default function AccessibilityPanel() {
     <>
       <button
         onClick={() => setPanelOpen(true)}
-        className="fixed right-4 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-green-500 hover:bg-green-400 rounded-full shadow-glow flex items-center justify-center transition-all duration-300 hover:scale-110"
+        className="fixed right-6 top-1/2 -translate-y-1/2 z-50 w-14 h-14 bg-green-500 hover:bg-green-400 rounded-full shadow-glow flex items-center justify-center transition-all duration-300 hover:scale-110"
+        style={{
+          boxShadow: '0 0 20px rgba(34, 197, 94, 0.5)',
+        }}
         aria-label="Accessibility Options"
       >
-        <Accessibility className="w-6 h-6 text-white" />
+        <Accessibility className="w-7 h-7 text-white" />
       </button>
 
       {panelOpen && (
