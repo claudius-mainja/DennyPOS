@@ -141,7 +141,7 @@ export default function Pricing() {
                   <div className="text-center mb-6">
                     <div className="flex items-baseline justify-center gap-1">
                       <span className="text-4xl font-bold text-white">ZAR {pkg.price.toLocaleString()}</span>
-                      <span className="text-gray-400">{t('pricing.monthly').replace('Monthly', '')}</span>
+                      <span className="text-gray-400">{t('pricing.monthly')}</span>
                     </div>
                     {pkg.savings && (
                       <p className="text-green-400 text-sm mt-2">{pkg.savings} savings</p>
