@@ -1,7 +1,34 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { Check, ArrowRight, Phone, Mail, Star, Zap, Shield, Crown } from 'lucide-react'
+import { Check, ArrowRight, Phone, Mail, Star, Zap, Shield, Crown, ShoppingCart, Monitor, Printer, ScanLine, Package } from 'lucide-react'
+
+const hardwareProducts = [
+  {
+    name: 'POS Touch Terminal',
+    image: '/images/products/Point Of Sale Systems Combo 15" Touch Terminal NEW.png',
+    price: 'R4,999',
+    link: 'https://dennyexpress.co.za/shop-2/',
+  },
+  {
+    name: 'Thermal Receipt Printer',
+    image: '/images/products/High Quality Thermal Reciept Printer 80 x 83 mm.png',
+    price: 'R1,299',
+    link: 'https://dennyexpress.co.za/shop-2/',
+  },
+  {
+    name: 'Barcode Scanner',
+    image: '/images/products/Handheld USB Laser Barcode Scanner - Wired -POS (Black) - YHD-8200.png',
+    price: 'R449',
+    link: 'https://dennyexpress.co.za/shop-2/',
+  },
+  {
+    name: 'Cash Drawer',
+    image: '/images/products/Cash Drawer - Black, RJ11 _ RJ12 Printer Kick Interface.png',
+    price: 'R899',
+    link: 'https://dennyexpress.co.za/shop-2/',
+  },
+]
 
 const packageIcons = {
   starter: Shield,
@@ -237,6 +264,75 @@ export default function Pricing() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-denny-green/5 to-transparent" />
+        <div className="max-w-7xl mx-auto px-4 md:px-6 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-center mb-12"
+          >
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-denny-green/20 text-denny-green text-sm font-semibold mb-4">
+              Powered by Denny Express
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Complete POS Hardware
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              DennyPOS software works seamlessly with premium hardware from our sister company Denny Express. Browse complete hardware packages and accessories below.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {hardwareProducts.map((product, i) => (
+              <motion.a
+                key={product.name}
+                href={product.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                className="glass rounded-2xl overflow-hidden group"
+              >
+                <div className="aspect-square bg-dark-700 p-4 flex items-center justify-center">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="max-h-32 object-contain mix-blend-luminosity group-hover:mix-blend-normal transition-all"
+                    onError={(e) => { e.target.style.display = 'none' }}
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="text-white font-semibold mb-1">{product.name}</h3>
+                  <p className="text-denny-green font-bold">{product.price}</p>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-center mt-10"
+          >
+            <a
+              href="https://dennyexpress.co.za/shop-2/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center gap-2"
+            >
+              <ShoppingCart className="w-5 h-5" />
+              Shop All Hardware at Denny Express
+              <ArrowRight className="w-5 h-5" />
+            </a>
+            <p className="text-gray-500 text-sm mt-3">
+              Hardware sold separately by Denny Express
+            </p>
+          </motion.div>
         </div>
       </section>
 

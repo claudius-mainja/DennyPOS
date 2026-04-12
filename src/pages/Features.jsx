@@ -4,9 +4,40 @@ import { motion } from 'framer-motion'
 import { 
   Check, ArrowRight, Zap, Shield, BarChart3, Users, 
   CreditCard, Smartphone, Package, Truck, Store, Utensils,
-  Pill, Scissors, Wrench
+  Pill, Scissors, Wrench, ShoppingCart, Monitor, Printer, ScanLine
 } from 'lucide-react'
 import { FeatureIcon } from '../assets/Illustrations'
+
+const dennyProducts = [
+  {
+    name: 'POS Touch Terminal',
+    desc: '15" All-in-One Touch Screen',
+    icon: Monitor,
+    link: 'https://dennyexpress.co.za/shop-2/',
+    price: 'From R4,999',
+  },
+  {
+    name: 'Thermal Receipt Printer',
+    desc: '80mm High Speed Printing',
+    icon: Printer,
+    link: 'https://dennyexpress.co.za/shop-2/',
+    price: 'From R1,299',
+  },
+  {
+    name: 'Barcode Scanner',
+    desc: 'USB Laser Scanner - Wired',
+    icon: ScanLine,
+    link: 'https://dennyexpress.co.za/shop-2/',
+    price: 'From R449',
+  },
+  {
+    name: 'Cash Drawer',
+    desc: 'Black, RJ11/RJ12 Interface',
+    icon: Package,
+    link: 'https://dennyexpress.co.za/shop-2/',
+    price: 'From R899',
+  },
+]
 
 const industryIcons = {
   retail: Store,
@@ -246,6 +277,68 @@ export default function Features() {
               <ArrowRight className="w-5 h-5" />
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 relative">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-center mb-12"
+          >
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-denny-green/20 text-denny-green text-sm font-semibold mb-4">
+              Powered by Denny Express
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">
+              Complete POS Hardware Solutions
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              As a Denny Express sub-brand, DennyPOS software integrates seamlessly with premium POS hardware available through our parent company. Get everything you need from one trusted source.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {dennyProducts.map((product, i) => {
+              const Icon = product.icon
+              return (
+                <motion.a
+                  key={product.name}
+                  href={product.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="glass rounded-2xl p-6 glass-hover group text-center"
+                >
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-denny-green/20 to-green-400/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Icon className="w-8 h-8 text-denny-green" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-1">{product.name}</h3>
+                  <p className="text-gray-400 text-sm mb-3">{product.desc}</p>
+                  <p className="text-denny-green font-bold">{product.price}</p>
+                </motion.a>
+              )
+            })}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-center mt-10"
+          >
+            <a
+              href="https://dennyexpress.co.za/shop-2/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center gap-2"
+            >
+              <ShoppingCart className="w-5 h-5" />
+              View All Hardware at Denny Express
+              <ArrowRight className="w-5 h-5" />
+            </a>
+          </motion.div>
         </div>
       </section>
 

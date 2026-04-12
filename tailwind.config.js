@@ -31,7 +31,8 @@ export default {
           white: 'rgba(255, 255, 255, 0.05)',
           border: 'rgba(255, 255, 255, 0.1)',
           hover: 'rgba(255, 255, 255, 0.08)',
-        }
+        },
+        'denny-green': '#22c55e',
       },
       fontFamily: {
         sans: ['Manrope', 'system-ui', '-apple-system', 'sans-serif'],
