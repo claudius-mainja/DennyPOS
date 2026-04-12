@@ -4,9 +4,15 @@ import { useTranslation } from 'react-i18next'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
 import { 
   ArrowRight, Play, Check, Phone, Mail, MapPin, 
-  Clock, TrendingUp, Users, ShoppingBag, Zap
+  Clock, TrendingUp, Users, ShoppingBag, Zap, ShoppingCart
 } from 'lucide-react'
 import { POSIllustration, DashboardIllustration, FeatureIcon } from '../assets/Illustrations'
+
+import Product1 from '../assets/Products/cash-drawer.png'
+import Product2 from '../assets/Products/barcode-scanner.png'
+import Product3 from '../assets/Products/thermal-printer.png'
+import Product4 from '../assets/Products/pos-terminal.png'
+import Product5 from '../assets/Products/scanner.png'
 
 const AnimatedCounter = ({ end, duration = 2000, suffix = '' }) => {
   const [count, setCount] = useState(0)
@@ -63,6 +69,58 @@ const GlassCard = ({ children, className = '', delay = 0 }) => {
   )
 }
 
+const ProductCard = ({ product, index }) => {
+  const [isHovered, setIsHovered] = useState(false)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={isInView ? { opacity: 1, scale: 1 } : {}}
+      transition={{ delay: index * 0.1, duration: 0.5 }}
+      className="relative"
+    >
+      <motion.div
+        className="glass rounded-2xl overflow-hidden cursor-pointer group"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        whileHover={{ scale: 1.05 }}
+      >
+        <div className="relative aspect-square bg-dark-700 p-6 flex items-center justify-center">
+          <img 
+            src={product.image} 
+            alt={product.name}
+            className="max-h-40 object-contain mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-300"
+          />
+          <motion.div 
+            className="absolute inset-0 bg-gradient-to-t from-green-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          />
+        </div>
+        <div className="p-4">
+          <h3 className="text-white font-semibold text-sm mb-2 line-clamp-2">{product.name}</h3>
+          <p className="text-green-400 font-bold">{product.price}</p>
+        </div>
+        
+        <motion.div 
+          className="absolute inset-0 flex items-center justify-center bg-dark-900/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto"
+        >
+          <a
+            href={product.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 bg-green-500 hover:bg-green-400 text-white rounded-lg font-semibold flex items-center gap-2 transform group-hover:scale-100 scale-90 transition-transform"
+          >
+            View in Store
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  )
+}
+
 export default function Home() {
   const { t } = useTranslation()
   const { scrollYProgress } = useScroll()
@@ -90,6 +148,14 @@ export default function Home() {
     { icon: 'restaurant', title: t('industries.items.restaurant.title'), desc: t('industries.items.restaurant.desc') },
     { icon: 'pharmacy', title: t('industries.items.pharmacy.title'), desc: t('industries.items.pharmacy.desc') },
     { icon: 'truck', title: t('industries.items.hardware.title'), desc: t('industries.items.hardware.desc') },
+  ]
+
+  const products = [
+    { name: 'Cash Drawer - Black', image: Product1, price: 'From R899', link: 'https://dennyexpress.co.za/shop-2/' },
+    { name: 'Handheld USB Barcode Scanner', image: Product2, price: 'From R449', link: 'https://dennyexpress.co.za/shop-2/' },
+    { name: 'Thermal Receipt Printer', image: Product3, price: 'From R1,299', link: 'https://dennyexpress.co.za/shop-2/' },
+    { name: 'POS Touch Terminal Combo', image: Product4, price: 'From R4,999', link: 'https://dennyexpress.co.za/shop-2/' },
+    { name: 'Barcode Scanner', image: Product5, price: 'From R299', link: 'https://dennyexpress.co.za/shop-2/' },
   ]
 
   return (
@@ -126,7 +192,7 @@ export default function Home() {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6"
               >
                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span className="text-sm text-gray-300">{t('hero.badge')}</span>
+                <span className="text-sm text-gray-300">A Sub-brand of Denny Express</span>
               </motion.div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
@@ -147,13 +213,16 @@ export default function Home() {
                   <Phone className="w-5 h-5" />
                   {t('hero.cta')}
                 </a>
-                <Link
-                  to="/features"
+                <a
+                  href="https://dennyexpress.co.za/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-secondary flex items-center justify-center gap-2 text-lg px-8 py-4"
                 >
-                  {t('hero.secondary')}
+                  <ShoppingCart className="w-5 h-5" />
+                  Visit Our Store
                   <ArrowRight className="w-5 h-5" />
-                </Link>
+                </a>
               </div>
 
               <div className="flex flex-wrap gap-6">
@@ -379,6 +448,82 @@ export default function Home() {
               View all industries
               <ArrowRight className="w-5 h-5" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="text-center mb-12">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="text-green-400 font-semibold text-sm uppercase tracking-wider"
+            >
+              Hardware & Accessories
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl md:text-4xl font-bold text-white mt-2 mb-4"
+            >
+              Complete POS Hardware Solutions
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-gray-400 max-w-2xl mx-auto mb-8"
+            >
+              As part of Denny Express, we offer a complete range of POS hardware including touch terminals, barcode scanners, receipt printers, and cash drawers. Everything you need to get started!
+            </motion.p>
+            <motion.a
+              href="https://dennyexpress.co.za/"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="btn-primary inline-flex items-center gap-2"
+            >
+              <ShoppingCart className="w-5 h-5" />
+              Visit Denny Express Store
+              <ArrowRight className="w-5 h-5" />
+            </motion.a>
+          </div>
+
+          <div className="relative">
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-dark-900 to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-dark-900 to-transparent z-10" />
+            
+            <motion.div 
+              className="flex gap-6 pb-4"
+              animate={{ x: [0, -200, 0] }}
+              transition={{ 
+                duration: 30, 
+                repeat: Infinity, 
+                ease: 'linear' 
+              }}
+            >
+              {[...products, ...products].map((product, i) => (
+                <div key={i} className="flex-shrink-0 w-64">
+                  <ProductCard product={product} index={i % products.length} />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          <div className="text-center mt-8">
+            <a
+              href="https://dennyexpress.co.za/shop-2/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-400 hover:text-green-300 font-semibold inline-flex items-center gap-2 transition-colors"
+            >
+              View All Products in Store
+              <ArrowRight className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </section>

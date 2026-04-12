@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, Search, HelpCircle, Plus, Minus } from 'lucide-react'
+import { ChevronDown, Search, HelpCircle, ShoppingCart, ExternalLink } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 export default function FAQ() {
   const { t } = useTranslation()
@@ -17,7 +18,13 @@ export default function FAQ() {
     { id: 'support', label: t('faq.categories.support') },
   ]
 
-  const questions = t('faq.questions', { returnObjects: true })
+  const questions = [
+    {
+      q: 'What is DennyPOS?',
+      a: 'DennyPOS is a sub-brand of Denny Express, specializing exclusively in Point of Sale software solutions for South African businesses. While Denny Express offers both hardware and software solutions, DennyPOS focuses purely on providing powerful, customizable POS software that helps you manage sales, inventory, and accounting efficiently.'
+    },
+    ...t('faq.questions', { returnObjects: true }).filter(q => !q.q.includes('What is DennyPOS'))
+  ]
 
   const filteredQuestions = questions.filter((q) => {
     const matchesSearch =
@@ -28,13 +35,13 @@ export default function FAQ() {
 
   return (
     <main className="pt-24 pb-20">
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-radial from-green-500/5 to-transparent" />
         <div className="max-w-4xl mx-auto px-4 md:px-6 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-12"
+            className="text-center mb-8"
           >
             <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">
               {t('faq.subtitle')}
@@ -48,6 +55,37 @@ export default function FAQ() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
+            className="glass rounded-2xl p-6 mb-8 border border-green-500/20"
+          >
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center flex-shrink-0">
+                <ShoppingCart className="w-6 h-6 text-green-400" />
+              </div>
+              <div>
+                <h3 className="text-white font-semibold mb-2">About DennyPOS & Denny Express</h3>
+                <p className="text-gray-400 text-sm mb-4">
+                  DennyPOS is a sub-brand of <strong className="text-green-400">Denny Express</strong>. While Denny Express offers comprehensive POS solutions including hardware, DennyPOS specializes exclusively in <strong className="text-white">software solutions</strong>. 
+                </p>
+                <p className="text-gray-400 text-sm mb-4">
+                  Need POS hardware? Visit our parent company's store for touch terminals, barcode scanners, receipt printers, cash drawers, and more!
+                </p>
+                <a
+                  href="https://dennyexpress.co.za/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 text-sm font-semibold transition-colors"
+                >
+                  Visit Denny Express Store
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
             className="mb-8"
           >
             <div className="relative">

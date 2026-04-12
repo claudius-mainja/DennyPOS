@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { 
   MapPin, Phone, Mail, Check, ArrowRight, 
-  Target, Heart, Shield, Lightbulb
+  Target, Heart, Shield, Lightbulb, ShoppingCart, ExternalLink
 } from 'lucide-react'
 import LogoImg from '../assets/logo.jpg'
 
@@ -53,7 +53,7 @@ export default function About() {
               {t('about.title')}
             </h1>
             <p className="text-gray-400 text-lg">
-              Empowering South African businesses with enterprise-grade POS technology since day one.
+              A sub-brand of Denny Express, specializing in POS software solutions for South African businesses.
             </p>
           </motion.div>
 
@@ -69,9 +69,31 @@ export default function About() {
               <p className="text-gray-400 text-lg mb-6">
                 {t('about.story.desc')}
               </p>
-              <p className="text-gray-400">
+              <p className="text-gray-400 mb-6">
                 We believe that every South African business deserves access to powerful, reliable technology. That's why we've built DennyPOS to be affordable, customizable, and backed by local support.
               </p>
+              <div className="glass rounded-xl p-6 border border-green-500/20">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center flex-shrink-0">
+                    <ShoppingCart className="w-6 h-6 text-green-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold mb-2">Need Hardware Too?</h4>
+                    <p className="text-gray-400 text-sm mb-3">
+                      Visit our parent company <strong className="text-green-400">Denny Express</strong> for a complete range of POS hardware including touch terminals, barcode scanners, receipt printers, and cash drawers.
+                    </p>
+                    <a
+                      href="https://dennyexpress.co.za/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 text-sm font-semibold transition-colors"
+                    >
+                      Visit Denny Express Store
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
@@ -83,12 +105,13 @@ export default function About() {
               <div className="absolute -top-6 -right-6 w-24 h-24 bg-green-500/20 rounded-full blur-3xl" />
               <div className="relative z-10">
                 <img src={LogoImg} alt="DennyPOS Logo" className="w-20 h-20 mb-6 object-contain" />
-                <h3 className="text-2xl font-bold text-white mb-4">DennyPOS</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">DennyPOS</h3>
+                <p className="text-green-400 text-sm mb-4">A sub-brand of Denny Express</p>
                 <p className="text-gray-400 mb-4">
-                  Premium Point of Sale Solutions for South African Businesses
+                  Premium Point of Sale Software for South African Businesses
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  {['POS System', 'Inventory Management', 'Reporting', 'Multi-Store'].map((tag) => (
+                  {['POS Software', 'Inventory Management', 'Reporting', 'Multi-Store', 'Customizable'].map((tag) => (
                     <span key={tag} className="px-3 py-1 bg-green-500/10 text-green-400 rounded-full text-sm">
                       {tag}
                     </span>

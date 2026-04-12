@@ -76,7 +76,15 @@ export default function Navbar() {
               ))}
             </div>
 
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-3">
+              <a
+                href="https://dennyexpress.co.za/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary flex items-center gap-2 text-sm"
+              >
+                Our Store
+              </a>
               <a
                 href="https://wa.me/27743551336?text=Hi, I'd like to book a demo for DennyPOS"
                 target="_blank"

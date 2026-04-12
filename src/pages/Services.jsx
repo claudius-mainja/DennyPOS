@@ -251,6 +251,62 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      <section className="py-20 relative">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="glass rounded-3xl p-8 md:p-12 bg-gradient-to-br from-denny-green/10 to-transparent border border-denny-green/20">
+            <div className="text-center mb-8">
+              <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">
+                Complete POS Solutions
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">
+                Hardware & Software, One Package
+              </h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                DennyPOS provides world-class software solutions, while our sister company Denny Express offers premium POS hardware. Together, we deliver complete turnkey solutions for your business.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                    <Settings className="w-6 h-6 text-green-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-1">DennyPOS Software</h3>
+                    <p className="text-gray-400 text-sm">Powerful, cloud-based point of sale software designed for South African businesses.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                    <Wrench className="w-6 h-6 text-blue-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-1">Denny Express Hardware</h3>
+                    <p className="text-gray-400 text-sm">Premium POS terminals, receipt printers, barcode scanners, and more from Denny Express.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-center md:text-left">
+                <a
+                  href="https://dennyexpress.co.za/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center gap-2"
+                >
+                  Visit Denny Express Store
+                  <ArrowRight className="w-5 h-5" />
+                </a>
+                <p className="text-sm text-gray-500 mt-3">
+                  Explore complete POS hardware solutions at dennyexpress.co.za
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
